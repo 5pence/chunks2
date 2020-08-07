@@ -9,6 +9,7 @@ def test_strip_vowels_on_zen():
     assert 'Th* Z*n *f Pyth*n, by T*m P*t*rs' in output
     assert 'B***t*f*l *s b*tt*r th*n *gly' in output
     assert 'N*m*sp*c*s *r* *n* h*nk*ng gr**t *d**' in output
+    assert '*n th* f*c* *f *mb*g**ty, r*f*s* th* t*mpt*t**n t* g**ss' in output
 
 
 def test_strip_vowels_on_other_text():
