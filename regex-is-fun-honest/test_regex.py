@@ -46,3 +46,4 @@ def test_match_first_paragraph_other_html():
             '<p>Not this one!</p><p>And this one neither.</p>')
     expected = 'Match only this paragraph.'
     assert match_first_paragraph(html) == expected
+

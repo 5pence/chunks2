@@ -19,6 +19,12 @@ def extract_course_times(course=COURSE):
        ['01:47', '32:03', '41:51', '27:48', '05:02']
        Return this list.
     """
+    pattern = r"([\d]{2}:[\d]{2})"
+    check = re.compile(pattern)
+    ok = check.findall(course)
+    if ok:
+        return ok
+    return None
 
 
 def get_all_hashtags_and_links(tweet=TWEET):
@@ -30,6 +36,12 @@ def get_all_hashtags_and_links(tweet=TWEET):
         '#APIs']
        Return this list.
     """
+    pattern = r"(#\S+|http://.+? )"
+    check = re.compile(pattern)
+    ok = check.findall(tweet)
+    if ok:
+        return [l.strip() for l in ok]
+    return None
 
 
 def match_first_paragraph(html=HTML):
@@ -38,3 +50,10 @@ def match_first_paragraph(html=HTML):
        'pyws != greedy' (= content of first paragraph).
        Return this string.
     """
+    pattern = '<p>(.+?)</p>'
+    check = re.compile(pattern)
+    ok = check.search(html)
+    if ok:
+        string = ok.group(1)
+        return string
+    return None
