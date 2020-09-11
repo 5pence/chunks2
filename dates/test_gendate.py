@@ -1,11 +1,11 @@
 from datetime import datetime
 from itertools import islice
 
-from date import gen_special_pybites_dates
+from gendate import gen_special_dates
 
 
-def test_gen_special_pybites_dates():
-    gen = gen_special_pybites_dates()
+def test_gen_special_dates():
+    gen = gen_special_dates()
     dates = list(islice(gen, 10))
 
     expected = [datetime(2017, 3, 29, 0, 0),
